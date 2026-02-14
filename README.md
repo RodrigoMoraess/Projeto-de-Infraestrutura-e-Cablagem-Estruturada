@@ -1,28 +1,38 @@
-# Projeto de Infraestrutura e Cabeamento Estruturado
+# Projeto de Infraestrutura e Cablagem Estruturada
 
-Este repositório apresenta o projeto de design e simulação de uma rede corporativa para uma empresa fictícia, desenvolvido no **Cisco Packet Tracer**. O projeto abrange desde o planejamento da planta física até a segmentação lógica da rede.
+Este repositório apresenta o projeto de design e simulação de uma rede corporativa para uma empresa de médio porte, desenvolvido no **Cisco Packet Tracer**. O foco do projeto é a organização física (planta baixa) e a segmentação lógica de alta eficiência.
 
 ## 📍 Visão Geral
-O projeto foi desenhado para atender 5 departamentos distintos, garantindo segurança, escalabilidade e organização através de sub-redes otimizadas.
+A rede foi projetada para suportar múltiplos departamentos isolados, garantindo segurança e uma gestão de tráfego otimizada através de sub-redes.
 
 ## 🚀 Tecnologias e Conceitos Aplicados
-- **Topologia:** Estrela Estendida.
-- **Segmentação:** VLSM (Variable Length Subnet Masking) utilizando máscaras `/28`.
-- **Hardware Simulado:** Roteadores Cisco, Switches 2960 e End-devices (PCs e Laptops).
-- **Documentação:** Identificação visual de gateways e endereçamento na planta.
+- **Topologia:** Estrela Estendida com infraestrutura centralizada na Sala de Redes.
+- **Segmentação:** VLSM (Variable Length Subnet Masking) com máscaras `/28` para máxima eficiência de endereçamento.
+- **Hardware:** Switches Cisco 2960, Roteadores, Servidores e APs Wireless.
+- **Design:** Planeamento de cablagem estruturada sobre planta baixa.
 
 ## 📊 Plano de Endereçamento (VLSM)
-A rede foi segmentada para otimizar o uso de IPs e reduzir domínios de broadcast:
+Com base na documentação técnica do projeto, a rede está dividida nos seguintes segmentos:
 
 | Departamento | Rede | Gateway | Máscara |
 | :--- | :--- | :--- | :--- |
 | **Administração** | 192.168.10.0/28 | 192.168.10.254 | 255.255.255.240 |
-| **Financeiro** | 192.168.20.0/28 | 192.168.20.254 | 255.255.255.240 |
+| **Financeiro / RH** | 192.168.20.0/28 | 192.168.20.254 | 255.255.255.240 |
 | **Marketing** | 192.168.30.0/28 | 192.168.30.254 | 255.255.255.240 |
-| **Secretaria** | 192.168.40.0/28 | 192.168.40.254 | 255.255.255.240 |
+| **Serviços e Entregas**| 192.168.40.0/28 | 192.168.40.254 | 255.255.255.240 |
+| **Área Técnica** | 192.168.50.0/28 | 192.168.50.254 | 255.255.255.240 |
 
-## 🖼️ Topologia do Projeto
+## 🖼️ Topologia e Planta da Rede
 ![Topologia da Rede](screenshot/infrastructure_diagram.png)
 
+## ⚙️ Configurações de Serviços Centrais
+
+Para além da conectividade básica, foram implementados serviços críticos para o funcionamento da empresa:
+
+### 🌐 Rede Wireless (Mobilidade)
+- **Wireless Router:** Configurado como ponto de acesso para dispositivos móveis (Laptops e Smartphones).
+- **Segurança:** Implementação de WPA2-PSK para proteção da rede Wi-Fi.
+- **Isolamento:** A rede wireless está integrada no segmento de gestão para permitir mobilidade administrativa sem comprometer a segurança dos departamentos críticos.
+
 ---
-*Projeto desenvolvido para fins de estudo e portfólio de infraestrutura de TI.*
+*Projeto desenvolvido para portfólio de Infraestrutura de Redes e Sistemas.*
